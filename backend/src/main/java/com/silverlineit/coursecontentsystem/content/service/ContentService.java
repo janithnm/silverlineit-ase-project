@@ -102,13 +102,20 @@ public class ContentService {
         Pageable pageable = PageRequest.of(page, size,
                 Sort.by(Sort.Direction.DESC, "createdAt"));
 
+        // Resolve current authenticated user
+        String email = SecurityContextHolder.getContext()
+                .getAuthentication().getName();
+        User currentUser = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        Long uploaderId = currentUser.getId();
+
         Page<CourseContent> result;
 
         if (fileType != null && !fileType.isBlank()) {
             CourseContent.FileType type = resolveFileType(fileType);
-            result = contentRepository.findByDeletedFalseAndFileType(type, pageable);
+            result = contentRepository.findByUploaderIdAndDeletedFalseAndFileType(uploaderId, type, pageable);
         } else {
-            result = contentRepository.findByDeletedFalse(pageable);
+            result = contentRepository.findByUploaderIdAndDeletedFalse(uploaderId, pageable);
         }
 
         return buildPagedResponse(result);

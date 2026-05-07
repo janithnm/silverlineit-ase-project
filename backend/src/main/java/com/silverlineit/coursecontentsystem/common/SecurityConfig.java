@@ -51,6 +51,7 @@ public class SecurityConfig {
         config.setAllowedOrigins(List.of(appProperties.getFrontendUrl()));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
+        config.setExposedHeaders(List.of("Content-Disposition"));
         config.setAllowCredentials(true);
         return new UrlBasedCorsConfigurationSource() {
             {

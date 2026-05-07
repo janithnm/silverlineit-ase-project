@@ -19,5 +19,8 @@ public interface CourseContentRepository extends JpaRepository<CourseContent, Lo
     Page<CourseContent> findByUploaderIdAndDeletedFalse(
             Long uploaderId, Pageable pageable);
 
+    Page<CourseContent> findByUploaderIdAndDeletedFalseAndFileType(
+            Long uploaderId, CourseContent.FileType fileType, Pageable pageable);
+
     Optional<CourseContent> findByIdAndDeletedFalse(Long id);
 }
