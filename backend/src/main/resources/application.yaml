@@ -3,9 +3,9 @@ spring:
     name: coursecontentsystem
 
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: ${DB_URL:jdbc:mysql://localhost:3306/course_content_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:sQLPasswordekaMySQL9713*_N22*_}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -23,10 +23,10 @@ spring:
     baseline-on-migrate: false
 
   mail:
-    host: ${MAIL_HOST}
-    port: ${MAIL_PORT}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:465}
+    username: ${MAIL_USERNAME:dev.janithonline@gmail.com}
+    password: ${MAIL_PASSWORD:rejzzyiutfcecadi}
     properties:
       mail:
         smtp:

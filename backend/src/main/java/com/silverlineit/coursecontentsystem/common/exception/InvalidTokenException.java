@@ -1,4 +1,9 @@
 package com.silverlineit.coursecontentsystem.common.exception;
 
-public class InvalidTokenException {
+import org.springframework.http.HttpStatus;
+
+public class InvalidTokenException extends AppException {
+    public InvalidTokenException(String message) {
+        super(message, HttpStatus.UNAUTHORIZED);
+    }
 }

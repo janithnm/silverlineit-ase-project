@@ -1,4 +1,10 @@
 package com.silverlineit.coursecontentsystem.common.exception;
 
-public class UnauthorizedAccessException {
+import org.springframework.http.HttpStatus;
+
+public class UnauthorizedAccessException extends AppException {
+    public UnauthorizedAccessException(String message) {
+        super(message, HttpStatus.FORBIDDEN);
+    }
 }
+

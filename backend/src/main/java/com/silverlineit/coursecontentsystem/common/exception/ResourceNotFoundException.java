@@ -1,4 +1,9 @@
 package com.silverlineit.coursecontentsystem.common.exception;
 
-public class ResourceNotFoundException {
+import org.springframework.http.HttpStatus;
+
+public class ResourceNotFoundException extends AppException {
+    public ResourceNotFoundException(String message) {
+        super(message, HttpStatus.NOT_FOUND);
+    }
 }
