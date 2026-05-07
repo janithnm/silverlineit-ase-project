@@ -23,17 +23,17 @@ export default function LoginPage() {
     };
 
     return (
-        <Box minHeight="100vh" display="flex" alignItems="center" justifyContent="center" bgcolor="background.default">
+        <Box sx={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", bgcolor: "background.default" }}>
             <Card sx={{ width: '100%', maxWidth: 420, mx: 2 }}>
                 <CardContent sx={{ p: 4 }}>
-                    <Box display="flex" justifyContent="center" mb={3}>
+                    <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }} >
                         <Logo size="md" />
                     </Box>
 
-                    <Typography variant="h5" sx={{ fontWeight: 700 }} textAlign="center" mb={0.5}>
+                    <Typography variant="h5" sx={{ fontWeight: 700, textAlign: "center", mb: 0.5 }} >
                         Welcome back
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" textAlign="center" mb={3}>
+                    <Typography variant="body2" sx={{ color: "text.secondary", textAlign: "center", mb: 3 }} >
                         Sign in to your account
                     </Typography>
 
@@ -43,7 +43,7 @@ export default function LoginPage() {
                         </Alert>
                     )}
 
-                    <Box component="form" onSubmit={handleSubmit} display="flex" flexDirection="column" gap={2}>
+                    <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                         <TextField
                             label="Email"
                             name="email"
@@ -77,7 +77,7 @@ export default function LoginPage() {
 
                     <Divider sx={{ my: 2 }} />
 
-                    <Typography variant="body2" textAlign="center">
+                    <Typography variant="body2" sx={{ textAlign: "center" }}>
                         Don't have an account?{' '}
                         <Link component="button" onClick={() => navigate('/register')} sx={{ fontWeight: 600 }}>
                             Register
@@ -85,6 +85,6 @@ export default function LoginPage() {
                     </Typography>
                 </CardContent>
             </Card>
-        </Box>
+        </Box >
     );
 }

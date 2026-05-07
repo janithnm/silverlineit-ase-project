@@ -24,7 +24,7 @@ export default function DashboardPage() {
                     <Typography variant="h4" sx={{ fontWeight: 700 }}>
                         Welcome back, {user?.username}
                     </Typography>
-                    <Typography color="text.secondary">
+                    <Typography sx={{ color: "text.secondary" }}>
                         Here's a summary of your course content.
                     </Typography>
                 </Box>

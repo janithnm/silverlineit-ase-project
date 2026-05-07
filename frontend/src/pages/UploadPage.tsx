@@ -64,14 +64,14 @@ export default function UploadPage() {
         <>
             <Navbar />
             <PageWrapper maxWidth="sm">
-                <Typography variant="h4" sx={{ fontWeight: 700 }} mb={1}>Upload Content</Typography>
-                <Typography color="text.secondary" mb={3}>
+                <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>Upload Content</Typography>
+                <Typography sx={{ mb: 3, color: "text.secondary" }}>
                     Upload course materials — PDF, MP4, JPG, or PNG up to 100MB.
                 </Typography>
 
                 <Card>
                     <CardContent sx={{ p: 3 }}>
-                        <Box component="form" onSubmit={handleSubmit} display="flex" flexDirection="column" gap={2.5}>
+                        <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
 
                             {/* Dropzone */}
                             <Box

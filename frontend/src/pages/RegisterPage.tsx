@@ -34,17 +34,17 @@ export default function RegisterPage() {
     };
 
     return (
-        <Box minHeight="100vh" display="flex" alignItems="center" justifyContent="center" bgcolor="background.default">
+        <Box sx={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", bgcolor: "background.default" }}>
             <Card sx={{ width: '100%', maxWidth: 420, mx: 2 }}>
                 <CardContent sx={{ p: 4 }}>
-                    <Box display="flex" justifyContent="center" mb={3}>
+                    <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
                         <Logo size="md" />
                     </Box>
 
-                    <Typography variant="h5" sx={{ fontWeight: 700 }} textAlign="center" mb={0.5}>
+                    <Typography variant="h5" sx={{ fontWeight: 700, textAlign: "center", mb: 0.5 }}>
                         Create an account
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" textAlign="center" mb={3}>
+                    <Typography variant="body2" sx={{ color: "text.secondary", textAlign: "center", mb: 3 }}>
                         Start uploading your course content
                     </Typography>
 
@@ -60,7 +60,7 @@ export default function RegisterPage() {
                         </Alert>
                     )}
 
-                    <Box component="form" onSubmit={handleSubmit} display="flex" flexDirection="column" gap={2}>
+                    <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                         <TextField label="Username" name="username" value={form.username} onChange={handleChange} required fullWidth />
                         <TextField label="Email" name="email" type="email" value={form.email} onChange={handleChange} required fullWidth />
                         <TextField label="Password" name="password" type="password" value={form.password} onChange={handleChange} required fullWidth />
@@ -72,7 +72,7 @@ export default function RegisterPage() {
 
                     <Divider sx={{ my: 2 }} />
 
-                    <Typography variant="body2" textAlign="center">
+                    <Typography variant="body2" sx={{ textAlign: "center" }}>
                         Already have an account?{' '}
                         <Link component="button" onClick={() => navigate('/login')} sx={{ fontWeight: 600 }}>
                             Sign in
