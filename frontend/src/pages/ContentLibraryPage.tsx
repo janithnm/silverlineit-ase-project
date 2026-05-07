@@ -24,6 +24,8 @@ export default function ContentLibraryPage() {
     const deleteContent = useDeleteContent();
     const downloadContent = useDownloadContent();
 
+    const apiOrigin = new URL(import.meta.env.VITE_API_BASE_URL).origin;
+
     const handleFilterChange = (e: SelectChangeEvent) => {
         setFileType(e.target.value || null);
         setPage(0);
@@ -82,19 +84,7 @@ export default function ContentLibraryPage() {
                                 </Typography>
                             </Box>
                             <Chip label={item.fileType} size="small" sx={{ flexShrink: 0 }} />
-                            <Tooltip title="View File">
-                                <Button
-                                    size="small"
-                                    variant="outlined"
-                                    startIcon={<VisibilityIcon fontSize="small" />}
-                                    href={item.fileUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    sx={{ flexShrink: 0, textTransform: 'none' }}
-                                >
-                                    View
-                                </Button>
-                            </Tooltip>
+
                             <Tooltip title="Download">
                                 <IconButton
                                     size="small"

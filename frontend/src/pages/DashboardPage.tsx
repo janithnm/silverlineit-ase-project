@@ -7,7 +7,6 @@ import Navbar from '../components/layout/Navbar';
 import PageWrapper from '../components/layout/PageWrapper';
 import { useContentList } from '../hooks/useContent';
 import { authService } from '../services/authService';
-import { contentService } from '../services/contentService';
 import type { ContentItem } from '../types';
 
 export default function DashboardPage() {
@@ -23,7 +22,7 @@ export default function DashboardPage() {
             <PageWrapper>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                        Welcome back, {user?.username} 👋
+                        Welcome back, {user?.username}
                     </Typography>
                     <Typography color="text.secondary">
                         Here's a summary of your course content.
@@ -90,7 +89,7 @@ export default function DashboardPage() {
                                     <Box sx={{ flex: 1 }}>
                                         <Typography sx={{ fontWeight: 600 }}>{item.title}</Typography>
                                         <Typography variant="caption" color="text.secondary">
-                                            {contentService.formatSize(item.fileSizeBytes)} · {new Date(item.createdAt).toLocaleDateString()}
+                                            {item.fileSizeFormatted} · {new Date(item.createdAt).toLocaleDateString()}
                                         </Typography>
                                     </Box>
                                     <Chip label={item.fileType} size="small" />
