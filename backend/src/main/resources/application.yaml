@@ -24,7 +24,7 @@ spring:
 
   mail:
     host: ${MAIL_HOST:smtp.gmail.com}
-    port: ${MAIL_PORT:465}
+    port: ${MAIL_PORT:587}
     username: ${MAIL_USERNAME:dev.janithonline@gmail.com}
     password: ${MAIL_PASSWORD:rejzzyiutfcecadi}
     properties:
@@ -51,7 +51,7 @@ app:
   frontend-url: ${FRONTEND_URL:http://localhost:5173}
 
   jwt:
-    secret: ${JWT_SECRET}
+    secret: ${JWT_SECRET:cHJvc2NhbmdUU2VjcmV0S2V5Rm9yTG9jYWxEZXZlbG9wbWVudE9ubHlEb05vdFVzZUluUHJvZHVjdGlvbjIwMjU=}
     access-token-expiry-ms: ${JWT_ACCESS_EXPIRY_MS:900000}
     refresh-token-expiry-ms: ${JWT_REFRESH_EXPIRY_MS:604800000}
 
