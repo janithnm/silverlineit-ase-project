@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Verify your email</title></head>
+<body>
+<th:block th:replace="~{email/base :: __doc__}" th:with="content=~{::content}">
+    <th:block th:fragment="content">
+        <h2 th:text="'Welcome, ' + ${username} + '!'">Welcome!</h2>
+        <p>Thank you for registering with the <strong>Silverline IT Course Content System</strong>. We're excited to have you on board.</p>
+        <p>To get started, please verify your email address by clicking the button below:</p>
+
+        <div style="text-align: center; margin: 32px 0;">
+            <a th:href="${verificationUrl}" class="btn">Verify Email Address</a>
+        </div>
+
+        <div class="note">
+            This verification link will expire in <strong>24 hours</strong>.
+        </div>
+
+        <div class="divider"></div>
+        <p>If the button doesn't work, copy and paste this link into your browser:</p>
+        <p style="word-break: break-all; font-size: 13px; color: #1A3C8F;" th:text="${verificationUrl}"></p>
+    </th:block>
+</th:block>
+</body>
+</html>
