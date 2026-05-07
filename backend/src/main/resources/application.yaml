@@ -31,8 +31,10 @@ spring:
       mail:
         smtp:
           auth: true
-          starttls:
+          ssl:
             enable: true
+          starttls:
+            enable: false
 
   servlet:
     multipart:
@@ -51,7 +53,7 @@ app:
   frontend-url: ${FRONTEND_URL:http://localhost:5173}
 
   jwt:
-    secret: ${JWT_SECRET}
+    secret: ${JWT_SECRET:cHJvc2NhbmdUU2VjcmV0S2V5Rm9yTG9jYWxEZXZlbG9wbWVudE9ubHlEb05vdFVzZUluUHJvZHVjdGlvbjIwMjU=}
     access-token-expiry-ms: ${JWT_ACCESS_EXPIRY_MS:900000}
     refresh-token-expiry-ms: ${JWT_REFRESH_EXPIRY_MS:604800000}
 
